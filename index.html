@@ -4,17 +4,18 @@
         <style type="text/css" rel="stylesheet">
             #my-clock
             {
-                height:16%;
-                width:26%;
+                height:10%;
+                width:50%;
                 padding: 0.1%;
                 font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                 position: absolute;
                 top:37%;
-                left:37%;
-                font-size: 400%;
+                left:34%;
+                font-size: 350%;
                 color:aqua;
                 background-color: black;
                 border-radius: 13px;
+                max-width:26%;
             }
         </style>
     </head>
@@ -28,16 +29,16 @@
                 var m=date.getMinutes();
                 var s=date.getSeconds();
                 var session="AM";
-                if(h>12)
-                    session="PM";
                 if(h==0)
-                    h=12;
-                else if(h>12)
-                    h=h-12;
+                h=12;
+                if(h>12)
+                h=h-12;
+                if(h>=12)
+                session="PM";
                 if(h<10)
-                    h="0" + h;
+                h="0" + h;
                 if(m<10)
-                    m="0" + m;
+                m="0" + m;
                 if(s<10)
                 s="0" + s;
                 var time=h + ":" + m + ":" + s+ " " + session;
